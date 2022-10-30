@@ -17,7 +17,7 @@ public class Main {
 
         //get number bean generator from context(container)
         NumberGenerator numberGenerator =
-                context.getBean("numberGenerator",NumberGenerator.class);
+                context.getBean(NumberGenerator.class);
 
         //class method next() to get random number
         int number = numberGenerator.next();
