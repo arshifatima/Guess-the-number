@@ -1,17 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-        https://www.springframework.org/schema/beans/spring-beans.xsd">
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
 
+    <context:annotation-config/>
     <bean id = "numberGenerator" class = "tuta.nota.NumberGeneratorImpl"/>
     <bean id = "game" class = "tuta.nota.GameImpl">
 <!--        used for constructor injection-->
 <!--        <constructor-arg ref="numberGenerator"/>-->
         <!-- setter based injection-->
-        <property name="numberGenerator" ref = "numberGenerator"/>
+        <!-- <property name="numberGenerator" ref = "numberGenerator"/> -->
 <!--        name attribute represents name of property of class in GameImpl.java class-->
 <!--        ref attribute represents reference of the bean-->
     </bean>
-    <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>
+<!--    used for annotation-->
+<!--    <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>-->
 </beans>
